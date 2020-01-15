@@ -9,8 +9,8 @@ libaa_la_SOURCES= \
        aamem.c \
        aaprintf.c \
        aahelp.c \
-       aaslnkbd.c \
        aaslang.c \
+       aaslnkbd.c \
        aafastre.c \
        aalinux.c \
        aalinuxkbd.c \
@@ -58,7 +58,7 @@ libaa_la_SOURCES= \
        aaputpixel.c \
        aarecfunc.c 
 libaa_la_LDFLAGS=@LDFLAGS@ -version-info 1:4:0
-bin_PROGRAMS=aainfo aatest aafire aasavefont
+bin_PROGRAMS= aainfo aatest aafire aasavefont
 
 aainfo_LDADD= libaa.la
 aainfo_LDFLAGS= @LDFLAGS@

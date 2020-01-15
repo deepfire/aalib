@@ -207,6 +207,22 @@ AC_ARG_WITH(ncurses,
 	fi
 )
 
+AC_ARG_WITH(slang,
+	[  --with-slang[=base-dir] Compile with slang/locate base dir],
+	if test x$withval = xyes
+	then
+		search_slang=true
+	else
+		LIBS="$LIBS -L$withval/lib -lslang"
+		AALIB_LIBS="$AALIB_LIBS -L$withval/lib -lslang"
+		CFLAGS="$CFLAGS -I$withval/include"
+		search_slang=false
+                slang_driver=true
+		screen_manager="slang"
+		AC_DEFINE(USE_SLANG)
+	fi
+)
+
 if test  "$slang_driver_test" = yes; then
   AC_DEFUN(AC_SLANG, [
     if $search_slang
